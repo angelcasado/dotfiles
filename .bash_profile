@@ -1,4 +1,6 @@
 alias l="ls -al"
+alias trash="open ~/.Trash"
+alias net="open -a \"Firefox Developer Edition\""
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -53,7 +55,7 @@ function git_branch {
   fi
 }
 
-PS1="\[\e[0;34m\]\u \[\e[0;31m\]in \[\e[0;32m\]\W"
+PS1="${COLOR_BLUE}\u ${COLOR_RED}in \[\e[0;32m\]\W"
 
 if [ -n $(git_branch) ]; then
   PS1+="\[\$(git_color)\]"        # colors git status
@@ -75,5 +77,7 @@ PS1+="% \[\e[0m\]"
 # PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # PS1="$EMOJI >"
 
+
 export PATH="/opt/homebrew/bin":$PATH
+eval "$(rbenv init - bash)"
 

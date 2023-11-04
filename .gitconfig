@@ -10,3 +10,5 @@
     co = checkout
     df = diff
     lg = log -p
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
